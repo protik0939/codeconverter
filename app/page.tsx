@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState, useRef } from "react";
 
 /** Minimal WASM module typing */
@@ -140,14 +141,14 @@ if ($a < $b) {
               className="px-1.5 sm:px-2 py-1 text-xs font-medium text-purple-200 hover:text-white hover:bg-purple-800 rounded transition-all cursor-pointer"
             >
               <span className="hidden sm:inline">Sample</span>
-              <img src="/sample.svg" alt="Sample" className="w-4 h-4 sm:hidden brightness-0 invert opacity-80" />
+              <Image height={50} width={50} src="/sample.svg" alt="Sample" className="w-4 h-4 sm:hidden brightness-0 invert opacity-80" />
             </button>
             <button
               onClick={clearAll}
               className="px-1.5 sm:px-2 py-1 text-xs font-medium text-purple-200 hover:text-white hover:bg-purple-800 rounded transition-all cursor-pointer"
             >
               <span className="hidden sm:inline">Clear</span>
-              <img src="/delete.svg" alt="Clear" className="w-4 h-4 sm:hidden brightness-0 invert opacity-80" />
+              <Image height={50} width={50} src="/delete.svg" alt="Clear" className="w-4 h-4 sm:hidden brightness-0 invert opacity-80" />
             </button>
             <button
               onClick={copyToClipboard}
@@ -155,13 +156,14 @@ if ($a < $b) {
               className="px-1.5 sm:px-2 py-1 text-xs font-medium text-purple-200 hover:text-white hover:bg-purple-800 rounded transition-all disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
             >
               <span className="hidden sm:inline">Copy</span>
-              <img src="/copy.svg" alt="Copy" className="w-4 h-4 sm:hidden brightness-0 invert opacity-80" />
+              <Image height={50} width={50} src="/copy.svg" alt="Copy" className="w-4 h-4 sm:hidden brightness-0 invert opacity-80" />
             </button>
             <button
               onClick={() => setShowModal(true)}
               className="px-1.5 sm:px-2 py-1 text-xs font-medium text-purple-200 hover:text-white hover:bg-purple-800 rounded transition-all cursor-pointer"
             >
-              <img src="/info.svg" alt="Info" className="w-4 h-4 brightness-0 invert opacity-80" />
+              <span className="hidden sm:inline">Info</span>
+              <Image height={50} width={50} src="/info.svg" alt="Info" className="w-4 h-4 sm:hidden brightness-0 invert opacity-80" />
             </button>
             {loading ? (
               <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-yellow-500/20 text-yellow-300 text-xs">
@@ -245,7 +247,7 @@ if ($a < $b) {
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50" onClick={() => setShowModal(false)}>
           <div className="bg-gray-800 rounded-lg shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
             <div className="sticky top-0 bg-gradient-to-r from-purple-900 to-indigo-900 px-6 py-4 flex items-center justify-between border-b border-purple-700">
-              <h2 className="text-xl font-bold text-white">Made By</h2>
+              <h2 className="text-xl font-bold text-white">Team Members</h2>
               <button
                 onClick={() => setShowModal(false)}
                 className="text-purple-200 hover:text-white hover:bg-purple-800 rounded-full p-2 transition-all cursor-pointer"
@@ -258,39 +260,39 @@ if ($a < $b) {
             <div className="p-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {/* Team Member 1 */}
-                <div className="flex flex-col items-center text-center space-y-3 p-4 bg-gray-700/50 rounded-lg hover:bg-gray-700 transition-all">
-                  <div className="w-20 h-20 rounded-full bg-gradient-to-br from-purple-500 to-indigo-500 flex items-center justify-center text-2xl font-bold text-white">
-                    A
+                <div className="relative overflow-hidden rounded-lg hover:scale-105 transition-all cursor-pointer group">
+                  <Image height={300} width={300} src={"/protik.webp"} alt={"Protik-1858"} className="w-full aspect-square object-cover" />
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/80 to-transparent p-4">
+                    <h3 className="text-white font-semibold text-lg">Protik-1858</h3>
                   </div>
-                  <h3 className="text-white font-semibold">Team Member 1</h3>
                 </div>
                 {/* Team Member 2 */}
-                <div className="flex flex-col items-center text-center space-y-3 p-4 bg-gray-700/50 rounded-lg hover:bg-gray-700 transition-all">
-                  <div className="w-20 h-20 rounded-full bg-gradient-to-br from-purple-500 to-indigo-500 flex items-center justify-center text-2xl font-bold text-white">
-                    B
+                <div className="relative overflow-hidden rounded-lg hover:scale-105 transition-all cursor-pointer group">
+                  <Image height={300} width={300} src={"/siyum.webp"} alt={"Siyum-1837"} className="w-full aspect-square object-cover" />
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/80 to-transparent p-4">
+                    <h3 className="text-white font-semibold text-lg">Siyum-1837</h3>
                   </div>
-                  <h3 className="text-white font-semibold">Team Member 2</h3>
                 </div>
                 {/* Team Member 3 */}
-                <div className="flex flex-col items-center text-center space-y-3 p-4 bg-gray-700/50 rounded-lg hover:bg-gray-700 transition-all">
-                  <div className="w-20 h-20 rounded-full bg-gradient-to-br from-purple-500 to-indigo-500 flex items-center justify-center text-2xl font-bold text-white">
-                    C
+                <div className="relative overflow-hidden rounded-lg hover:scale-105 transition-all cursor-pointer group">
+                  <Image height={300} width={300} src={"/rafi.webp"} alt={"Rafi-1847"} className="w-full aspect-square object-cover" />
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/80 to-transparent p-4">
+                    <h3 className="text-white font-semibold text-lg">Rafi-1847</h3>
                   </div>
-                  <h3 className="text-white font-semibold">Team Member 3</h3>
                 </div>
                 {/* Team Member 4 */}
-                <div className="flex flex-col items-center text-center space-y-3 p-4 bg-gray-700/50 rounded-lg hover:bg-gray-700 transition-all">
-                  <div className="w-20 h-20 rounded-full bg-gradient-to-br from-purple-500 to-indigo-500 flex items-center justify-center text-2xl font-bold text-white">
-                    D
+                <div className="relative overflow-hidden rounded-lg hover:scale-105 transition-all cursor-pointer group">
+                  <Image height={300} width={300} src={"/jarif.webp"} alt={"Jarif-1855"} className="w-full aspect-square object-cover" />
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/80 to-transparent p-4">
+                    <h3 className="text-white font-semibold text-lg">Jarif-1855</h3>
                   </div>
-                  <h3 className="text-white font-semibold">Team Member 4</h3>
                 </div>
                 {/* Team Member 5 */}
-                <div className="flex flex-col items-center text-center space-y-3 p-4 bg-gray-700/50 rounded-lg hover:bg-gray-700 transition-all">
-                  <div className="w-20 h-20 rounded-full bg-gradient-to-br from-purple-500 to-indigo-500 flex items-center justify-center text-2xl font-bold text-white">
-                    E
+                <div className="relative overflow-hidden rounded-lg hover:scale-105 transition-all cursor-pointer group">
+                  <Image height={300} width={300} src={"/shakib.webp"} alt={"Shakib-1952"} className="w-full aspect-square object-cover" />
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/80 to-transparent p-4">
+                    <h3 className="text-white font-semibold text-lg">Shakib-1952</h3>
                   </div>
-                  <h3 className="text-white font-semibold">Team Member 5</h3>
                 </div>
               </div>
             </div>
