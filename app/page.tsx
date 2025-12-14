@@ -24,6 +24,7 @@ export default function Home() {
 
   const [loading, setLoading] = useState<boolean>(true);
   const [converting, setConverting] = useState<boolean>(false);
+  const [toast, setToast] = useState<string>("");
   const [phpCode, setPhpCode] = useState<string>(`$a = 10;
 $b = 20;
 if ($a < $b) {
@@ -99,11 +100,23 @@ if ($a < $b) {
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(jsCode);
+    showToast("Copied to clipboard!");
   };
 
   const clearAll = () => {
     setPhpCode("");
     setJsCode("");
+    showToast("Cleared all code!");
+  };
+
+  const loadSample = () => {
+    setPhpCode(sample1);
+    showToast("Sample code loaded!");
+  };
+
+  const showToast = (message: string) => {
+    setToast(message);
+    setTimeout(() => setToast(""), 2000);
   };
 
   return (
@@ -122,15 +135,15 @@ if ($a < $b) {
           </div>
           <div className="flex items-center gap-1 sm:gap-3 flex-shrink-0">
             <button
-              onClick={() => setPhpCode(sample1)}
-              className="px-1.5 sm:px-2 py-1 text-xs font-medium text-purple-200 hover:text-white hover:bg-purple-800 rounded transition-all"
+              onClick={loadSample}
+              className="px-1.5 sm:px-2 py-1 text-xs font-medium text-purple-200 hover:text-white hover:bg-purple-800 rounded transition-all cursor-pointer"
             >
               <span className="hidden sm:inline">Sample</span>
               <img src="/sample.svg" alt="Sample" className="w-4 h-4 sm:hidden brightness-0 invert opacity-80" />
             </button>
             <button
               onClick={clearAll}
-              className="px-1.5 sm:px-2 py-1 text-xs font-medium text-purple-200 hover:text-white hover:bg-purple-800 rounded transition-all"
+              className="px-1.5 sm:px-2 py-1 text-xs font-medium text-purple-200 hover:text-white hover:bg-purple-800 rounded transition-all cursor-pointer"
             >
               <span className="hidden sm:inline">Clear</span>
               <img src="/delete.svg" alt="Clear" className="w-4 h-4 sm:hidden brightness-0 invert opacity-80" />
@@ -138,7 +151,7 @@ if ($a < $b) {
             <button
               onClick={copyToClipboard}
               disabled={!jsCode}
-              className="px-1.5 sm:px-2 py-1 text-xs font-medium text-purple-200 hover:text-white hover:bg-purple-800 rounded transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              className="px-1.5 sm:px-2 py-1 text-xs font-medium text-purple-200 hover:text-white hover:bg-purple-800 rounded transition-all disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
             >
               <span className="hidden sm:inline">Copy</span>
               <img src="/copy.svg" alt="Copy" className="w-4 h-4 sm:hidden brightness-0 invert opacity-80" />
@@ -199,7 +212,7 @@ if ($a < $b) {
       <button
         onClick={runTranspile}
         disabled={loading || converting}
-        className="fixed bottom-0 left-0 right-0 md:bottom-8 md:left-1/2 md:right-auto md:-translate-x-1/2 md:w-auto w-full z-50 group px-8 py-4 md:rounded-full rounded-none font-bold text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 shadow-2xl hover:shadow-purple-500/50 disabled:opacity-50 disabled:cursor-not-allowed transition-all md:transform md:hover:scale-110 md:active:scale-95"
+        className="fixed bottom-0 left-0 right-0 md:bottom-8 md:left-1/2 md:right-auto md:-translate-x-1/2 md:w-auto w-full z-50 group px-8 py-4 md:rounded-full rounded-none font-bold text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 shadow-2xl hover:shadow-purple-500/50 disabled:opacity-50 disabled:cursor-not-allowed transition-all md:transform md:hover:scale-110 md:active:scale-95 cursor-pointer"
       >
         <span className="flex items-center gap-3">
           {converting ? (
@@ -217,9 +230,15 @@ if ($a < $b) {
               </svg>
               Convert
             </>
-          )}
-        </span>
+          )}        </span>
       </button>
+
+      {/* Toast Notification */}
+      {toast && (
+        <div className="fixed top-20 left-1/2 -translate-x-1/2 z-50 px-4 py-2 bg-purple-600 text-white rounded-lg shadow-lg animate-fade-in">
+          {toast}
+        </div>
+      )}
     </div>
   );
 }
