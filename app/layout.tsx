@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Code Converter",
-  description: "A PHP to TypeScript code converter!",
+  title: "PHP to JavaScript Code Converter",
+  description: "A PHP to JavaScript code converter!",
 };
 
 export default function RootLayout({

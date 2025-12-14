@@ -116,8 +116,8 @@ if ($a < $b) {
               <img src="/cc.svg" alt="Code Converter" className="w-full h-full" />
             </div>
             <div>
-              <h1 className="text-lg font-bold text-white">Code Converter</h1>
-              <p className="text-xs text-purple-300 hidden sm:block">PHP to JavaScript Transpiler</p>
+              <h1 className="text-lg font-bold text-white">PHP to JavaScript Code Converter</h1>
+              <p className="text-xs text-purple-300 hidden sm:block">Powered by WebAssembly</p>
             </div>
           </div>
           <div className="flex items-center gap-3">
