@@ -112,13 +112,11 @@ if ($a < $b) {
       <header className="flex-shrink-0 bg-gradient-to-r from-purple-900 to-indigo-900 border-b border-purple-700">
         <div className="px-4 py-2 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-purple-500 to-indigo-500 flex items-center justify-center">
-              <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-              </svg>
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-purple-500 to-indigo-500 flex items-center justify-center p-1">
+              <img src="/cc.svg" alt="Code Converter" className="w-full h-full" />
             </div>
             <div>
-              <h1 className="text-lg font-bold text-white">UniTrans</h1>
+              <h1 className="text-lg font-bold text-white">Code Converter</h1>
               <p className="text-xs text-purple-300 hidden sm:block">PHP to JavaScript Transpiler</p>
             </div>
           </div>
@@ -163,7 +161,7 @@ if ($a < $b) {
         <div className="w-full md:w-1/2 h-1/2 md:h-full flex flex-col bg-gray-800 border-b md:border-b-0 md:border-r border-gray-700">
           <div className="flex-shrink-0 px-3 py-2 bg-gray-800/50 border-b border-gray-700 flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <span className="text-base">🐘</span>
+              <img src="/php.svg" alt="PHP" className="w-8 h-auto" />
               <span className="text-sm font-semibold text-gray-200">PHP Input</span>
             </div>
           </div>
@@ -180,7 +178,7 @@ if ($a < $b) {
         <div className="w-full md:w-1/2 h-1/2 md:h-full flex flex-col bg-gray-800">
           <div className="flex-shrink-0 px-3 py-2 bg-gray-800/50 border-b border-gray-700 flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <span className="text-base">⚡</span>
+              <img src="/js.svg" alt="JavaScript" className="w-5 h-auto" />
               <span className="text-sm font-semibold text-gray-200">JavaScript Output</span>
             </div>
           </div>

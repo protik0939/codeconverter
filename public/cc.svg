@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 578.02 578.02">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #fff;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 32px;
+      }
+
+      .cls-2 {
+        fill: url(#linear-gradient);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="87.22" y1="92.36" x2="497.95" y2="492.63" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#835ca6"/>
+      <stop offset=".56" stop-color="#7060aa"/>
+      <stop offset="1" stop-color="#6763ad"/>
+    </linearGradient>
+  </defs>
+  <rect class="cls-2" width="578.02" height="578.02" rx="124.89" ry="124.89"/>
+  <g id="System_Terminal" data-name="System / Terminal">
+    <path id="Vector" class="cls-1" d="m379.56,343.34h-90.56m-90.56-90.56l54.33,45.28-54.33,45.28m-72.44,14.49v-137.64c0-20.29,0-30.44,3.95-38.19,3.47-6.82,9.01-12.35,15.83-15.83,7.75-3.95,17.9-3.95,38.19-3.95h210.09c20.29,0,30.42,0,38.16,3.95,6.82,3.47,12.37,9.01,15.84,15.83,3.94,7.74,3.94,17.88,3.94,38.13v137.76c0,20.25,0,30.37-3.94,38.11-3.47,6.82-9.03,12.37-15.84,15.84-7.74,3.94-17.86,3.94-38.11,3.94h-210.2c-20.25,0-30.39,0-38.13-3.94-6.82-3.47-12.35-9.03-15.83-15.84-3.95-7.75-3.95-17.88-3.95-38.16Z"/>
+  </g>
+</svg>
