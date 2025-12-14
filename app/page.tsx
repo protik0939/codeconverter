@@ -110,35 +110,38 @@ if ($a < $b) {
     <div className="h-screen overflow-hidden bg-gray-900 flex flex-col">
       {/* Compact Header */}
       <header className="flex-shrink-0 bg-gradient-to-r from-purple-900 to-indigo-900 border-b border-purple-700">
-        <div className="px-4 py-2 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-purple-500 to-indigo-500 flex items-center justify-center p-1">
+        <div className="px-2 sm:px-4 py-2 flex items-center justify-between gap-2">
+          <div className="flex items-center gap-2 min-w-0">
+            <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-gradient-to-br from-purple-500 to-indigo-500 flex items-center justify-center p-1 flex-shrink-0">
               <img src="/cc.svg" alt="Code Converter" className="w-full h-full" />
             </div>
-            <div>
-              <h1 className="text-lg font-bold text-white">PHP to JavaScript Code Converter</h1>
+            <div className="min-w-0">
+              <h1 className="text-sm sm:text-lg font-bold text-white truncate">PHP to JS Converter</h1>
               <p className="text-xs text-purple-300 hidden sm:block">Powered by WebAssembly</p>
             </div>
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-1 sm:gap-3 flex-shrink-0">
             <button
               onClick={() => setPhpCode(sample1)}
-              className="px-2 py-1 text-xs font-medium text-purple-200 hover:text-white hover:bg-purple-800 rounded transition-all"
+              className="px-1.5 sm:px-2 py-1 text-xs font-medium text-purple-200 hover:text-white hover:bg-purple-800 rounded transition-all"
             >
-              Sample
+              <span className="hidden sm:inline">Sample</span>
+              <img src="/sample.svg" alt="Sample" className="w-4 h-4 sm:hidden brightness-0 invert opacity-80" />
             </button>
             <button
               onClick={clearAll}
-              className="px-2 py-1 text-xs font-medium text-purple-200 hover:text-white hover:bg-purple-800 rounded transition-all"
+              className="px-1.5 sm:px-2 py-1 text-xs font-medium text-purple-200 hover:text-white hover:bg-purple-800 rounded transition-all"
             >
-              Clear
+              <span className="hidden sm:inline">Clear</span>
+              <img src="/delete.svg" alt="Clear" className="w-4 h-4 sm:hidden brightness-0 invert opacity-80" />
             </button>
             <button
               onClick={copyToClipboard}
               disabled={!jsCode}
-              className="px-2 py-1 text-xs font-medium text-purple-200 hover:text-white hover:bg-purple-800 rounded transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              className="px-1.5 sm:px-2 py-1 text-xs font-medium text-purple-200 hover:text-white hover:bg-purple-800 rounded transition-all disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Copy
+              <span className="hidden sm:inline">Copy</span>
+              <img src="/copy.svg" alt="Copy" className="w-4 h-4 sm:hidden brightness-0 invert opacity-80" />
             </button>
             {loading ? (
               <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-yellow-500/20 text-yellow-300 text-xs">
@@ -156,7 +159,7 @@ if ($a < $b) {
       </header>
 
       {/* Editor Container */}
-      <div className="flex-1 flex flex-col md:flex-row overflow-hidden">
+      <div className="flex-1 flex flex-col md:flex-row overflow-hidden pb-20 md:pb-0">
         {/* PHP Input */}
         <div className="w-full md:w-1/2 h-1/2 md:h-full flex flex-col bg-gray-800 border-b md:border-b-0 md:border-r border-gray-700">
           <div className="flex-shrink-0 px-3 py-2 bg-gray-800/50 border-b border-gray-700 flex items-center justify-between">
@@ -192,11 +195,11 @@ if ($a < $b) {
         </div>
       </div>
 
-      {/* Floating Convert Button */}
+      {/* Convert Button */}
       <button
         onClick={runTranspile}
         disabled={loading || converting}
-        className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 group px-8 py-4 rounded-full font-bold text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 shadow-2xl hover:shadow-purple-500/50 disabled:opacity-50 disabled:cursor-not-allowed transition-all transform hover:scale-110 active:scale-95"
+        className="fixed bottom-0 left-0 right-0 md:bottom-8 md:left-1/2 md:right-auto md:-translate-x-1/2 md:w-auto w-full z-50 group px-8 py-4 md:rounded-full rounded-none font-bold text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 shadow-2xl hover:shadow-purple-500/50 disabled:opacity-50 disabled:cursor-not-allowed transition-all md:transform md:hover:scale-110 md:active:scale-95"
       >
         <span className="flex items-center gap-3">
           {converting ? (
